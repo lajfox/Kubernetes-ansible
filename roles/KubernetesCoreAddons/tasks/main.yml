@@ -8,11 +8,6 @@
   tags:
     - kube-proxy
 
-- include: flanneld.yml
-  when: Net_Choose is defined and Net_Choose == 'flannel'
-  tags:
-    - flanneld
-
 - block:
     - name: 渲染coredns,metrics-server文件模板
       template: src={{ item }} dest=/etc/kubernetes/CoreAddons/{{ item.split('.')[:-1]|join('.') }}
@@ -30,3 +25,8 @@
   when: not ( newNode | default(false) )
   tags:
     - core
+
+- include: flanneld.yml
+  when: Net_Choose is defined and Net_Choose == 'flannel'
+  tags:
+    - flanneld

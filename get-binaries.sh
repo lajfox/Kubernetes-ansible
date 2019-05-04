@@ -47,8 +47,8 @@ if [ "${#@}" -eq 1 ];then
     else
         down_kube
         down_etcd
-        down_cni
         down_flanneld
+        down_cni
     fi
 fi
 

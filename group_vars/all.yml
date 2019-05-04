@@ -7,8 +7,8 @@ ntp_domain2: 's1b.time.edu.cn'
 TimeZone: 'Asia/Shanghai'
 kernel: true
 
-VIP: '172.16.1.240'
-VIP_NETMASK: 24
+VIP: '192.168.158.170'
+VIP_NETMASK: 28
 INTERFACE_NAME: eth0
 
 # 后续考虑扩etcd或者master的话可以填写下面预留ip写在证书里
